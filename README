@@ -38,10 +38,10 @@ DELETE	/api/books/{id}	Delete book
 Sample Request (POST /api/books):
 
 {
-  "title": "Design Patterns",
-  "author": "Gang of Four",
-  "isbn": "978-0201633610",
-  "publicationYear": 1994
+    "title": "Web Technology",
+    "author": "Karekezi Joshua ",
+    "isbn": "978-0134685991",
+    "publicationYear": 2014
 }
 Question 2: Student Registration API
 Method	Endpoint	Description
@@ -70,8 +70,9 @@ GET	/api/menu/search?name={name}	Search by name
 POST	/api/menu	Add new menu item
 PUT	/api/menu/{id}/availability	Toggle availability
 DELETE	/api/menu/{id}	Delete menu item
-Sample Request (POST /api/menu):
 
+The Simple Request (POST /api/menu):
+Here is JSON:
 {
   "name": "Margherita Pizza",
   "description": "Classic Italian pizza",
@@ -79,7 +80,9 @@ Sample Request (POST /api/menu):
   "category": "Main Course",
   "available": true
 }
+
 Question 4: E-Commerce Product API
+
 Method	Endpoint	Description
 GET	/api/products	Get all products
 GET	/api/products?page={page}&limit={limit}	Get products with pagination
@@ -94,8 +97,8 @@ PUT	/api/products/{productId}	Update product
 PATCH	/api/products/{productId}/stock?quantity={qty}	Update stock
 DELETE	/api/products/{productId}	Delete product
 
-Sample Request (http://localhost:8080/api/products/search?name=phone):
-
+ This Is a Sample Request of searching by product from browser (http://localhost:8080/api/products/search?name=phone):
+ JSON:
 {
     "id": 2,
     "name": "Phone",
