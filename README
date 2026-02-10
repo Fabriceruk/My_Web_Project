@@ -8,13 +8,26 @@ question4_product_api
 question5_task_api
 question6_userprofile-api
 
-Also This project built using:
+Here is a squence of how Question are Structured|| I got sample for the first question only
+
+"question1-library-api/src/ main/java/com/example/question1libraryapi/Question1LibraryApiApplication.java
+model calss:
+/ model/─ Book.java
+Controller class: 
+/ controller/ BookController.java/ 
+Resourses: 
+src/main/resources/ application.properties/
+Pom XML:
+pom.xml"
+
+
+Also This project built using The following Tools:
 Spring Boot
 Spring Web
 VS Code
 Postman for testing
 
-The project demonstrates RESTful API development using HTTP Methods:
+The project demonstrates RESTful API development using HTTP Method as follow:
 GET
 POST
 PUT
@@ -24,10 +37,11 @@ DELETE
 
 Here is a step-by-step you can run this project:
 First Open project in VS Code
-Second Open terminal inside project folder then check if you are in right directory run mvn clean install after complited run this command "mvn spring-boot:run" or inside main application clik at the button of run Java
-After all open  your browser
-Server starts at http://localhost:8080
-Here There is an EndPoint for each question and its description
+Second Open terminal inside project folder then check if you are in right directory run mvn clean install after complited run this command "mvn spring-boot:run" 
+or inside main application clik at the button of run Java
+After all open  your browser then type "http://localhost:8080"
+
+Also Down here there is an EndPoint for each question and its description
 
 Method	Endpoint	Description
 GET	/api/books	Get all books
@@ -51,16 +65,19 @@ GET	/api/students/major/{major}	Get students by major
 GET	/api/students/filter?gpa={minGpa}	Filter students by GPA
 POST	/api/students	Register new student
 PUT	/api/students/{studentId}	Update student
-Sample Request (POST /api/students):
+
+ Request (http://localhost:8080/api/students):
 
 {
-  "firstName": "Alice",
-  "lastName": "Johnson",
-  "email": "alice@example.com",
-  "major": "Computer Science",
-  "gpa": 3.7
-}
+    "studentId": 2,
+    "firstName": "Bob",
+    "lastName": "Mucyo",
+    "email": "bobmucyo2@gmail.com",
+    "major": "Web Technology",
+    "gpa": 3.2
+  }
 Question 3: Restaurant Menu API
+
 Method	Endpoint	Description
 GET	/api/menu	Get all menu items
 GET	/api/menu/{id}	Get menu item by ID
@@ -73,13 +90,14 @@ DELETE	/api/menu/{id}	Delete menu item
 
 The Simple Request (POST /api/menu):
 Here is JSON:
-{
-  "name": "Margherita Pizza",
-  "description": "Classic Italian pizza",
-  "price": 12.99,
-  "category": "Main Course",
-  "available": true
-}
+ {
+        "id": 8,
+        "name": "Cake",
+        "description": "Chocolate cake",
+        "price": 4500.0,
+        "category": "Dessert",
+        "available": true
+    }
 
 Question 4: E-Commerce Product API
 
@@ -110,6 +128,7 @@ DELETE	/api/products/{productId}	Delete product
   }
 
 Question 5: Task Management API
+
 Method	Endpoint	Description
 GET	/api/tasks	Get all tasks
 GET	/api/tasks/{taskId}	Get task by ID
@@ -119,16 +138,20 @@ POST	/api/tasks	Create new task
 PUT	/api/tasks/{taskId}	Update task
 PATCH	/api/tasks/{taskId}/complete	Mark as completed
 DELETE	/api/tasks/{taskId}	Delete task
-Sample Request (POST /api/tasks):
 
-{
-  "title": "Code review",
-  "description": "Review pull requests",
-  "completed": false,
-  "priority": "HIGH",
-  "dueDate": "2024-12-22"
+Sample Request (http://localhost:8080/api/tasks):
+
+ {
+       "taskId": 2,
+        "title": "Do Assignment",
+        "description": "Complete all questions",
+        "completed": true,
+        "priority": "HIGH",
+        "dueDate": "2026-02-20"
 }
-Bonus: User Profile API
+
+Q6 "Bonus you give us": User Profile API
+
 Method	Endpoint	Description
 GET	/api/users	Get all users
 GET	/api/users/{userId}	Get user by ID
@@ -141,36 +164,26 @@ PATCH	/api/users/{userId}/activate	Activate user
 PATCH	/api/users/{userId}/deactivate	Deactivate user
 DELETE	/api/users/{userId}	Delete user
 
-Sample Request (POST /api/users):
+Response (http://localhost:8080/api/users):
 
 {
-  "username": "john_doe",
-  "email": "john@example.com",
-  "fullName": "John Doe",
-  "age": 25,
-  "country": "USA",
-  "bio": "Software developer",
-  "active": true
-}
-Sample Response:
-
-{
-  "success": true,
-  "message": "User profile created successfully",
-  "data": {
-    "userId": 1,
-    "username": "john_doe",
-    "email": "john@example.com",
-    "fullName": "John Doe",
-    "age": 25,
-    "country": "USA",
-    "bio": "Software developer",
-    "active": true
-  }
-}
+    "success": true,
+    "message": "All users fetched",
+    "data": [
+        {
+            "userId": 1,
+            "username": "Hertier",
+            "email": "hertier@gmail.com",
+            "fullName": "Hertier Tuyishime",
+            "age": 27,
+            "country": "Rwanda",
+            "bio": "Developer",
+            "active": true
+        }
 Testing with Postman
 Import the endpoints into Postman
 Set base URL: http://localhost:8080
+https://studentauca13-8229287.postman.co/workspace/Student's-Workspace~92a6e455-e906-44ac-86ac-492ad42ac2bf/request/52206902-7d3ac6ae-3214-400f-8545-869551eb0148?historyId=52206902-c3d4cce5-e32b-4b2f-b8bd-cbd535c3c844&utm_source=postman&utm_medium=response_tab&utm_campaign=core&utm_content=link
 Test each endpoint with sample data
 Verify HTTP status codes:
 200 OK (GET, PUT, PATCH)
